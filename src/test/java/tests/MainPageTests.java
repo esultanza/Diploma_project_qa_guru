@@ -11,10 +11,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 @Feature("Main page")
 @Tag("web")
-public class MainPageTests {
+public class MainPageTests extends TestBase {
     @Test
     void logoShouldBeVisible() {
-        open("https://bell-sw.com/");
+        open("/");
 
         $(".l-liberica")
                 .$(byTitle("Liberica JDK, Committed to Freedom, 100% OpenJDK based, TCK verified"))
@@ -23,7 +23,7 @@ public class MainPageTests {
 
     @Test
     void downloadsBlockShouldHaveContent() {
-        open("https://bell-sw.com/");
+        open("/");
 
         $(".l-liberica-downloads").$$(".l-liberica-download").shouldHaveSize(3);
         $(".l-liberica-download").shouldHave(text("LTS versions"), text("(long-term support)"));
@@ -33,7 +33,7 @@ public class MainPageTests {
 
     @Test
     void benefitsBlockShouldHaveContent() {
-        open("https://bell-sw.com/");
+        open("/");
 
         $(".l-benefits").$$(".l-benefit").shouldHaveSize(4);
         $(".l-benefit").shouldHave(text("Java SE standard compliance"),

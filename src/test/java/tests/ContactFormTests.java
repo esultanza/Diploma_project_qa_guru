@@ -11,10 +11,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 @Feature("Contact form")
 @Tag("web")
-public class ContactFormTests {
+public class ContactFormTests extends TestBase {
     @Test
     void contactFormShouldAppearByButton() {
-        open("https://bell-sw.com/");
+        open("/");
 
         $(by("data-target", "#popup-contact-form-window")).click();
 
