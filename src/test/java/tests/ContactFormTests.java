@@ -8,16 +8,20 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.by;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 
 @Feature("Contact form")
 @Tag("web")
 public class ContactFormTests extends TestBase {
     @Test
     void contactFormShouldAppearByButton() {
-        open("/");
+        step("Open main page", () ->
+                open("/"));
 
-        $(by("data-target", "#popup-contact-form-window")).click();
+        step("Click on CONTACT US button", () ->
+                $(by("data-target", "#popup-contact-form-window")).click());
 
-        $("#popup-contact-form-window").$(".modal-content").shouldHave(text("Want to Know More? Contact Us!"));
+        step("Verify, contact modal appears", () ->
+                $("#popup-contact-form-window").$(".modal-content").shouldHave(text("Want to Know More? Contact Us!")));
     }
 }
