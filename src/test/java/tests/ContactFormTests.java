@@ -1,6 +1,7 @@
 package tests;
 
 import io.qameta.allure.Feature;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,7 @@ import static io.qameta.allure.Allure.step;
 @Tag("web")
 public class ContactFormTests extends TestBase {
     @Test
+    @DisplayName("Contact form should appear when click on CONTACT US button")
     void contactFormShouldAppearByButton() {
         step("Open main page", () ->
                 open("/"));

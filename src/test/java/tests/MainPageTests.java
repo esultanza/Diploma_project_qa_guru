@@ -1,6 +1,7 @@
 package tests;
 
 import io.qameta.allure.Feature;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,7 @@ import static io.qameta.allure.Allure.step;
 @Tag("web")
 public class MainPageTests extends TestBase {
     @Test
+    @DisplayName("Logo should be visible on main page")
     void logoShouldBeVisible() {
         step("Open main page", () ->
                 open("/"));
@@ -25,6 +27,7 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Downloads block should have blocks and content")
     void downloadsBlockShouldHaveContent() {
         step("Open main page", () ->
                 open("/"));
@@ -39,6 +42,7 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Benefits block should have blocks and content")
     void benefitsBlockShouldHaveContent() {
         open("/");
 
