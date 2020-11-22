@@ -18,8 +18,8 @@ defaultTasks 'help'
 
 ext {
     allureVersion = "2.13.6"
-    selenideVersion = "5.15.1"
-    junitVersion = "5.6.2"
+    selenideVersion = "5.16.0"
+    junitVersion = "5.7.0"
 }
 
 repositories {
@@ -98,7 +98,7 @@ help {
         println "************************************************************************ "
         println "***                                                                  *** "
         println "*** Welcome to                                                       *** "
-        println "*** https://github.com/autotests-cloud/qa_guru_diplom_project        *** "
+        println "*** https://github.com/esultanza/Diploma_project_qa_guru             *** "
         println "***                                                                  *** "
         println "*** Requirements for mobile tests:                                   *** "
         println "*** - get browserstack account                                       *** "
