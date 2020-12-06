@@ -84,6 +84,6 @@ public class CarVideoTests extends TestBase {
     void aliveTest() {
         step("Open web-site with traveling by car video", () -> open(""));
         step("Verify, instagram link is correct and available", () ->
-                $(byText("Follow me!")).shouldBe(visible).shouldHave(href("https://instagram.com/driveandlisten")).click());
+            $(byText("Follow me!")).shouldBe(visible).shouldHave(href("https://instagram.com/driveandlisten")).click());
     }
 }
