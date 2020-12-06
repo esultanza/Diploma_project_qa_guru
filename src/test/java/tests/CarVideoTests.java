@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 import io.qameta.allure.AllureId;
+
 import static io.qameta.allure.Allure.step;
 
 @Feature("QA.GURU Diploma project")
@@ -51,9 +52,9 @@ public class CarVideoTests extends TestBase {
         step("Open web-site with traveling by car video", () -> open("/"));
         step("Verify, irritants could be turned off", () -> {
             step("Turn off street noise", () ->
-                    $(".Button.rowCol.right.no-right-margin.col-lg").shouldBe(visible).doubleClick());
+                $(".Button.rowCol.right.no-right-margin.col-lg").shouldBe(visible).doubleClick());
             step("Turn off radio", () ->
-                    $(".radioPlayer.play.col-sm-2").shouldBe(visible).doubleClick());
+                $(".radioPlayer.play.col-sm-2").shouldBe(visible).doubleClick());
             step("Hide right bar", () -> {
                 $("p.layer").click();
                 $("#panel").shouldNotBe(visible);
@@ -69,24 +70,20 @@ public class CarVideoTests extends TestBase {
     void actualVideoTest() {
         step("Open web-site with traveling by car video", () -> open("/"));
         step("Verify, YouTube link is available", () ->
-                $(byText("Video source")).shouldBe(visible).click());
+            $(byText("Video source")).shouldBe(visible).click());
         step("Verify, streaming video is not older than 2018", () -> {
             switchTo().window(1);
             $("#date.style-scope.ytd-video-primary-info-renderer").shouldHave(Condition.matchText("^.*?(201[8-9]).*?$|^*(202[0-2])*$"));
         });
     }
-    
+
     @Test
     @Story("Outside the portal tests")
-    @Description("Make sure project is alive by visiting its instagram")
+    @Description("Make sure project is alive by its instagram")
     @DisplayName("It's alive")
     void aliveTest() {
-        step("Open web-site with traveling by car video", () -> open("/"));
-        step("Verify, instagram link is available", () ->
-                $(byText("Follow me!")).shouldBe(visible).click());
-        step("Verify, instagram account has a link to the project", () -> {
-            switchTo().window(1);
-            $(byText("driveandlisten.herokuapp.com")).shouldBe(visible);
-        });
+        step("Open web-site with traveling by car video", () -> open(""));
+        step("Verify, instagram link is correct and available", () ->
+                $(byText("Follow me!")).shouldBe(visible).shouldHave(href("https://instagram.com/driveandlisten")).click());
     }
 }
