@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-import allure.JiraIssue;
 import io.qameta.allure.AllureId;
 import static io.qameta.allure.Allure.step;
 
@@ -64,7 +63,6 @@ public class CarVideoTests extends TestBase {
 
     @Test
     @AllureId("1464")
-    @JiraIssue("QC-10")
     @Story("Outside the portal tests")
     @Description("Make sure video is fresh")
     @DisplayName("Actual video")
