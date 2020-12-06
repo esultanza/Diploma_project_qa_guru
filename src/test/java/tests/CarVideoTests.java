@@ -47,7 +47,7 @@ public class CarVideoTests extends TestBase {
     @DisplayName("Occam")
     void occamTest() {
         step("Open web-site with traveling by car video", () -> open("/"));
-        step("Verify, irritants could be turn off", () -> {
+        step("Verify, irritants could be turned off", () -> {
             step("Turn off street noise", () ->
                     $(".Button.rowCol.right.no-right-margin.col-lg").shouldBe(visible).doubleClick());
             step("Turn off radio", () ->
@@ -56,20 +56,6 @@ public class CarVideoTests extends TestBase {
                 $("p.layer").click();
                 $("#panel").shouldNotBe(visible);
             });
-        });
-    }
-
-    @Test
-    @Story("Outside the portal tests")
-    @Description("Make sure project is alive by visiting its instagram")
-    @DisplayName("It's alive")
-    void aliveTest() {
-        step("Open web-site with traveling by car video", () -> open("/"));
-        step("Verify, instagram link is available", () ->
-                $(byText("Follow me!")).shouldBe(visible).click());
-        step("Verify, instagram account has a link to the project", () -> {
-            switchTo().window(1);
-            $(byText("driveandlisten.herokuapp.com")).shouldBe(visible);
         });
     }
 
@@ -84,6 +70,20 @@ public class CarVideoTests extends TestBase {
         step("Verify, streaming video is not older than 2018", () -> {
             switchTo().window(1);
             $("#date.style-scope.ytd-video-primary-info-renderer").shouldHave(Condition.matchText("^.*?(201[8-9]).*?$|^*(202[0-2])*$"));
+        });
+    }
+    
+    @Test
+    @Story("Outside the portal tests")
+    @Description("Make sure project is alive by visiting its instagram")
+    @DisplayName("It's alive")
+    void aliveTest() {
+        step("Open web-site with traveling by car video", () -> open("/"));
+        step("Verify, instagram link is available", () ->
+                $(byText("Follow me!")).shouldBe(visible).click());
+        step("Verify, instagram account has a link to the project", () -> {
+            switchTo().window(1);
+            $(byText("driveandlisten.herokuapp.com")).shouldBe(visible);
         });
     }
 }
