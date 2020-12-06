@@ -7,6 +7,9 @@ import org.junit.jupiter.api.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+
+import allure.JiraIssue;
+import io.qameta.allure.AllureId;
 import static io.qameta.allure.Allure.step;
 
 @Feature("QA.GURU Diploma project")
