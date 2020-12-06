@@ -60,6 +60,8 @@ public class CarVideoTests extends TestBase {
     }
 
     @Test
+    @AllureId("1464")
+    @JiraIssue("QC-10")
     @Story("Outside the portal tests")
     @Description("Make sure video is fresh")
     @DisplayName("Actual video")
