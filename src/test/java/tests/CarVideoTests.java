@@ -9,11 +9,11 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-@Epic("QA.GURU Diploma project")
+@Feature("QA.GURU Diploma project")
 @Tag("web")
 public class CarVideoTests extends TestBase {
     @Test
-    @Feature("Option tests")
+    @Story("Option tests")
     @Description("Checking capability to switch watching and acoustic modes")
     @DisplayName("Switch modes")
     void switchModesTest() {
@@ -29,7 +29,7 @@ public class CarVideoTests extends TestBase {
     }
 
     @Test
-    @Feature("Option tests")
+    @Story("Option tests")
     @Description("Checking capability to change city")
     @DisplayName("Change city")
     void changeCityTest() {
@@ -41,7 +41,7 @@ public class CarVideoTests extends TestBase {
     }
 
     @Test
-    @Feature("Option tests")
+    @Story("Option tests")
     @Description("Checking capability to turn off street noise, radio, hide right bar. " +
             "And then just to take a pleasure from undiscovered roads")
     @DisplayName("Occam")
@@ -60,7 +60,7 @@ public class CarVideoTests extends TestBase {
     }
 
     @Test
-    @Feature("Outside the portal tests")
+    @Story("Outside the portal tests")
     @Description("Make sure project is alive by visiting its instagram")
     @DisplayName("It's alive")
     void aliveTest() {
@@ -74,7 +74,7 @@ public class CarVideoTests extends TestBase {
     }
 
     @Test
-    @Feature("Outside the portal tests")
+    @Story("Outside the portal tests")
     @Description("Make sure video is fresh")
     @DisplayName("Actual video")
     void actualVideoTest() {
